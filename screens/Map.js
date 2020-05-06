@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Switch } from 'react-native';
+import { StyleSheet, Text, View, Switch, Image } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
 export default function Map() {
@@ -12,13 +12,12 @@ export default function Map() {
     <View style={styles.container}>
       <View style={styles.imageContainer2}>
         <View style={styles.imageContainer}>
-          <Text>"IMAGE GOES HERE"</Text>
-
+          <Image source={require('../assets/images/test-map.png')} style={{ width: 400, height: 400 }} />
         </View>
       </View>
       <Switch
-        trackColor={{ false: "##433F6F", true: "#81b0ff" }}
-        thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+        trackColor={{ false: "##433F6F", true: "#433F6F" }}
+        thumbColor={isEnabled ? "#1D6D6D" : "#f4f3f4"}
         ios_backgroundColor="#3e3e3e"
         onValueChange={toggleSwitch}
         value={isEnabled}
