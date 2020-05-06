@@ -9,18 +9,17 @@ import { RectButton, ScrollView } from 'react-native-gesture-handler';
 const DATA = [
     {
         title: 'Hard working students',
-        info: 'We do work',
+        info: 'A-TECH students embark on a learning experience designed to maximize opportunity and potential. This high-achieving, Nevada Five-Star, and three-time National Blue Ribbon school offers academic distinction and technological excellence to those who choose one of its six college and career preparatory programs',
         link: null,
     },
     {
         title: 'Hard working teachers',
-        info: 'They do work',
+        info: 'The mission of Advanced Technologies Academy is to empower a diverse student body to succeed in a competitive world by promoting academic concepts, technological skills, and ethical behavior.',
         link: null,
     },
     {
-        title: 'People who don\'t over elaborate ',
-        info: 'your looking at one of them',
-        link: null,
+        title: 'See more',
+        link: 'https://atech.org/prospective-students/about-a-tech/'
     },
     {
         title: 'Connect With Us',
