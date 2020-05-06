@@ -5,6 +5,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import Map from '../screens/Map';
 import BellSchedule from '../screens/BellSchedule';
+import About from '../screens/About';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -43,7 +44,7 @@ export default function BottomTabNavigator({ navigation, route }) {
       />
       <BottomTab.Screen
         name="About"
-        component={Map}
+        component={About}
         options={{
           title: 'About',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-information" />,
