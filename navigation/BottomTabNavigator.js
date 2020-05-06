@@ -3,7 +3,8 @@ import * as React from 'react';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import Map from '../screens/Map';
+import BellSchedule from '../screens/BellSchedule';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -20,16 +21,32 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Get Started',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+          title: 'Home',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-home" />,
         }}
       />
       <BottomTab.Screen
-        name="Links"
-        component={LinksScreen}
+        name="Bell Schedule"
+        component={BellSchedule}
         options={{
-          title: 'Resources',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-book" />,
+          title: 'Bell Schedule',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-list" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Map"
+        component={Map}
+        options={{
+          title: 'Map',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-map" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="About"
+        component={Map}
+        options={{
+          title: 'About',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-information" />,
         }}
       />
     </BottomTab.Navigator>
@@ -41,8 +58,10 @@ function getHeaderTitle(route) {
 
   switch (routeName) {
     case 'Home':
-      return 'How to get started';
-    case 'Links':
-      return 'Links to learn more';
+      return 'Welcome to A-TECH';
+    case 'Bell Schedule':
+      return '🔔';
+    case 'Map':
+      return 'Our Grounds';
   }
 }
