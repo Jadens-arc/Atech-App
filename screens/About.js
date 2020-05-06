@@ -29,8 +29,23 @@ const DATA = [
     },
     {
         title: 'Our Website',
-        info: 'Get connected',
+        info: 'atech.org',
         link: 'https://atech.org'
+    },
+    {
+        title: 'On Instagram',
+        info: '@ advancedtechnologiesacademy',
+        link: 'https://www.instagram.com/advancedtechnologiesacademy/'
+    },
+    {
+        title: 'On Twitter',
+        info: '@ atech_mavericks',
+        link: 'https://twitter.com/atech_mavericks'
+    },
+    {
+        title: 'On Facebook',
+        info: '@ AdvancedTechnologiesAcademy',
+        link: 'https://www.facebook.com/AdvancedTechnologiesAcademy'
     },
 
 ]
