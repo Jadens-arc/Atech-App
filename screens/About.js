@@ -11,40 +11,48 @@ const DATA = [
         title: 'Hard working students',
         info: 'A-TECH students embark on a learning experience designed to maximize opportunity and potential. This high-achieving, Nevada Five-Star, and three-time National Blue Ribbon school offers academic distinction and technological excellence to those who choose one of its six college and career preparatory programs',
         link: null,
+        key: 'students',
     },
     {
         title: 'Hard working teachers',
         info: 'The mission of Advanced Technologies Academy is to empower a diverse student body to succeed in a competitive world by promoting academic concepts, technological skills, and ethical behavior.',
         link: null,
+        key: 'teachers',
     },
     {
         title: 'See more',
-        link: 'https://atech.org/prospective-students/about-a-tech/'
+        link: 'https://atech.org/prospective-students/about-a-tech/',
+        key: 'more',
     },
     {
         title: 'Connect With Us',
 	    info: null,
-	    link: null
+        link: null,
+        key:'connect',
     },
     {
         title: 'Our Website',
         info: 'atech.org',
-        link: 'https://atech.org'
+        link: 'https://atech.org',
+        key: 'website',
     },
     {
         title: 'On Instagram',
         info: '@ advancedtechnologiesacademy',
-        link: 'https://www.instagram.com/advancedtechnologiesacademy/'
+        link: 'https://www.instagram.com/advancedtechnologiesacademy/',
+        key: 'instagram',
     },
     {
         title: 'On Twitter',
         info: '@ atech_mavericks',
-        link: 'https://twitter.com/atech_mavericks'
+        link: 'https://twitter.com/atech_mavericks',
+        key: 'twitter',
     },
     {
         title: 'On Facebook',
         info: '@ AdvancedTechnologiesAcademy',
-        link: 'https://www.facebook.com/AdvancedTechnologiesAcademy'
+        link: 'https://www.facebook.com/AdvancedTechnologiesAcademy',
+        key: 'facebook'
     },
 
 ]

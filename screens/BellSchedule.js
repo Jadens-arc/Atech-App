@@ -7,6 +7,7 @@ import { RectButton, ScrollView } from 'react-native-gesture-handler';
 const DATA = [
     {
         title: 'Monday, Tuesday, and Friday (8 Period Day)',
+        key: '8day',
         info: `Period 1 7:25 – 8:07 
 Period 2 8: 11 – 8: 58 
 Period 3 9: 02 – 9: 44 
@@ -31,6 +32,7 @@ Buses depart at 2:20 pm`,
     },
     {
         title: 'Wednesday (Odd Block Day)',
+        key: 'half day',
         info: `Period 1 7:25 – 8:55
 Period 3 8:59 -10:24
 
@@ -51,6 +53,7 @@ Buses depart at 2:20 pm`,
     },
     {
         title: 'Thursday (Even Block Day)',
+        key: 'even day',
         info: `Period 2 7:25 – 8:50
 Period 4 8:59 -10:24
 
@@ -70,6 +73,7 @@ buses depart at 2:20 pm`,
     },
     {
         title: 'A Miracle',
+        key: 'note',
         info: 'Isn\'t it amazing how we all largely agreed on one measurement of time. Almost anywhere you go, you can be almost certain that there are 24 hours in a day.'
     }
 ]
