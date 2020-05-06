@@ -9,7 +9,7 @@ export default function Map() {
     <View style={styles.container}>
       <View style={styles.imageContainer2}>
         <View style={styles.imageContainer}>
-
+          <Text>"IMAGE GOES HERE"</Text>
         </View>
       </View>
 
