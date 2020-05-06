@@ -1,24 +1,77 @@
-import * as WebBrowser from 'expo-web-browser';
-import * as React from 'react';
-import { StyleSheet,  View } from 'react-native';
+import React, { useState, useRef } from 'react'
+import {
+  SafeAreaView,
+  StyleSheet,
+  StatusBar,
+  ActivityIndicator,
+  View,
+  TouchableOpacity,
+  Text
+} from 'react-native'
+import WebView from 'react-native-webview'
 
-import { WebView } from 'react-native-webview';
+const App = () => {
+  const [canGoBack, setCanGoBack] = useState(false)
+  const [canGoForward, setCanGoForward] = useState(false)
+  const [currentUrl, setCurrentUrl] = useState('')
 
+  const webviewRef = useRef(null)
 
-export default function HomeScreen() {
+  function backButtonHandler() {
+    if (webviewRef.current) webviewRef.current.goBack()
+  }
+
+  function frontButtonHandler() {
+    if (webviewRef.current) webviewRef.current.goForward()
+  }
   return (
-    <View style={styles.container}>
-      <WebView
-        source={{ uri: 'https://mavpulse.com/' }}
-      />
-    </View>
-  );
+    <>
+      <StatusBar barStyle='dark-content' />
+      <SafeAreaView style={styles.flexContainer}>
+        <WebView
+          source={{ uri: 'https://mavpulse.com/' }}
+          startInLoadingState={true}
+          renderLoading={() => (
+            <ActivityIndicator
+              color='black'
+              size='large'
+              style={styles.flexContainer}
+            />
+          )}
+          ref={webviewRef}
+          onNavigationStateChange={navState => {
+            setCanGoBack(navState.canGoBack)
+            setCanGoForward(navState.canGoForward)
+            setCurrentUrl(navState.url)
+          }}
+        />
+        <View style={styles.tabBarContainer}>
+          <TouchableOpacity onPress={backButtonHandler}>
+            <Text style={styles.button}>Back</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={frontButtonHandler}>
+            <Text style={styles.button}>Forward</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    </>
+  )
 }
 
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  flexContainer: {
+    flex: 1
   },
-});
+  tabBarContainer: {
+    padding: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#514099'
+  },
+  button: {
+    color: 'white',
+    fontSize: 24
+  }
+})
+
+export default App
