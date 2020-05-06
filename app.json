@@ -9,10 +9,10 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/Big-A-TECH-25-year-logo-web.png",
+    "icon": "./assets/images/AtechLog.png",
     "scheme": "myapp",
     "splash": {
-      "image": "./assets/images/Big-A-TECH-25-year-logo-web.png",
+      "image": "./assets/images/AtechLog.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
