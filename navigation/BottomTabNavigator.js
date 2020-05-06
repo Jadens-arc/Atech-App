@@ -61,6 +61,8 @@ function getHeaderTitle(route) {
       return 'Welcome to A-TECH';
     case 'Bell Schedule':
       return '🔔';
+    case 'About':
+      return 'What is A-TECH';
     case 'Map':
       return 'Our Grounds';
   }
