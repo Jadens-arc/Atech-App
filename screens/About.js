@@ -8,28 +8,25 @@ import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
 const DATA = [
     {
-        title: 'This App',
-        info: 'An app about me',
-        link: 'https://expo.io/@jaden-arceneaux/jadens-app'
+        title: 'Hard working students',
+        info: 'We do work',
     },
     {
-        title: 'Scripty',
-        info: 'A text editor for ChromeOS',
-        link: 'https://jadens-arc.github.io/Scripty/'
+        title: 'Hard working teachers',
+        info: 'They do work',
     },
     {
-        title: 'Ubuntu Brightness Control',
-        info: 'A small application to adjust brightness on ubuntu desktop',
-        link: 'https://github.com/Jadens-arc/Ubuntu-Brightness'
+        title: 'People who don\'t over elaborate ',
+        info: 'your looking at one of them',
     },
 ]
 
 
-function Item({ title, info, link }) {
+function Item({ title, info}) {
     return (
-        <View style={styles.item} onPress={() => Linking.openURL(link)}>
-            <Text style={styles.title} onPress={() => Linking.openURL(link)}>{title}</Text>
-            <Text onPress={() => Linking.openURL(link)}>{info}</Text>
+        <View style={styles.item} >
+            <Text style={styles.title}>{title}</Text>
+            <Text>{info}</Text>
         </View>
     );
 }
