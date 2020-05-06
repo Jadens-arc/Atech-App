@@ -24,10 +24,13 @@ const DATA = [
 
 function Item({ title, info}) {
     return (
-        <View style={styles.item} >
-            <Text style={styles.title}>{title}</Text>
-            <Text>{info}</Text>
+        <View style={styles.itemWrap}> 
+            <View style={styles.item} >
+                <Text style={styles.title}>{title}</Text>
+                <Text>{info}</Text>
+            </View>
         </View>
+
     );
 }
 
@@ -55,7 +58,17 @@ const styles = StyleSheet.create({
         padding: 20,
         marginVertical: 8,
         marginHorizontal: 16,
+        borderRadius: 10,
+        shadowOffset: {width: 6, height: 6},
+        shadowColor: 'black',
+        shadowOpacity: 0.1,
     },
+    itemWrap: {
+        shadowOffset: { width: -6, height: -6 },
+        shadowColor: 'white',
+        shadowOpacity: 1,
+    },
+
     title: {
         fontSize: 32,
     },

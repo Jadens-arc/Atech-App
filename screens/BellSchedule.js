@@ -77,10 +77,13 @@ buses depart at 2:20 pm`,
 
 function Item({ title, info }) {
     return (
-        <View style={styles.item} >
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.text}>{info}</Text>
+        <View style={styles.itemWrap}>
+            <View style={styles.item} >
+                <Text style={styles.title}>{title}</Text>
+                <Text style={styles.text}>{info}</Text>
+            </View>
         </View>
+
     );
 }
 
@@ -107,6 +110,15 @@ const styles = StyleSheet.create({
         padding: 20,
         marginVertical: 8,
         marginHorizontal: 16,
+        borderRadius: 10,
+        shadowOffset: { width: 6, height: 6 },
+        shadowColor: 'black',
+        shadowOpacity: 0.09,
+    },
+    itemWrap: {
+        shadowOffset: { width: -6, height: -6 },
+        shadowColor: 'white',
+        shadowOpacity: 1,
     },
     title: {
         fontSize: 32,
