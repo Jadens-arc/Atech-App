@@ -37,13 +37,13 @@ function Item({ title, info}) {
 
 export default function About() {
     return (
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <View style={styles.container} contentContainerStyle={styles.contentContainer}>
             <FlatList
                 data={DATA}
                 renderItem={({ item }) => <Item title={item.title} info={item.info} link={item.link} />}
             />
             
-        </ScrollView>
+        </View>
     );
 }
 
