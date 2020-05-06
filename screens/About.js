@@ -23,6 +23,11 @@ const DATA = [
         link: null,
     },
     {
+        title: 'Connect With Us',
+	    info: null,
+	    link: null
+    },
+    {
         title: 'Our Website',
         info: 'Get connected',
         link: 'https://atech.org'
@@ -32,6 +37,17 @@ const DATA = [
 
 
 function Item({ title, info, link}) {
+
+    if (link == null && info == null) {
+        return (
+            <View style={styles.itemWrap}>
+                <View style={styles.item} >
+                    <Text style={styles.header}>{title}</Text>
+                </View>
+            </View>
+
+        );
+    }
 
     if (link != null) {
         return (
@@ -96,7 +112,10 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 32,
     },
-
+    header: {
+	    fontSize: 35,
+        textAlign: 'center', 
+    },
     link: {
         fontSize: 32,
 
