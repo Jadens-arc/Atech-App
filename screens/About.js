@@ -10,28 +10,51 @@ const DATA = [
     {
         title: 'Hard working students',
         info: 'We do work',
+        link: null,
     },
     {
         title: 'Hard working teachers',
         info: 'They do work',
+        link: null,
     },
     {
         title: 'People who don\'t over elaborate ',
         info: 'your looking at one of them',
+        link: null,
     },
+    {
+        title: 'Our Website',
+        info: 'Get connected',
+        link: 'https://atech.org'
+    },
+
 ]
 
 
-function Item({ title, info}) {
-    return (
-        <View style={styles.itemWrap}> 
-            <View style={styles.item} >
-                <Text style={styles.title}>{title}</Text>
-                <Text>{info}</Text>
-            </View>
-        </View>
+function Item({ title, info, link}) {
 
-    );
+    if (link != null) {
+        return (
+            <View style={styles.itemWrap} onPress={() => Linking.openURL(link)}>
+                <View style={styles.item} onPress={() => Linking.openURL(link)}>
+                    <Text style={styles.link} onPress={() => Linking.openURL(link)}>{title}</Text>
+                    <Text>{info}</Text>
+                </View>
+            </View>
+
+        );
+    }
+    else {
+        return (
+            <View style={styles.itemWrap}> 
+                <View style={styles.item} >
+                    <Text style={styles.title}>{title}</Text>
+                    <Text>{info}</Text>
+                </View>
+            </View>
+
+        );
+    }
 }
 
 
@@ -42,6 +65,7 @@ export default function About() {
                 data={DATA}
                 renderItem={({ item }) => <Item title={item.title} info={item.info} link={item.link} />}
             />
+
             
         </View>
     );
@@ -71,6 +95,13 @@ const styles = StyleSheet.create({
 
     title: {
         fontSize: 32,
+    },
+
+    link: {
+        fontSize: 32,
+
+        color: 'blue',
+
     },
 
 });
