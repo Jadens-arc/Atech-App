@@ -68,6 +68,10 @@ Period 8 12:27 – 1:52
 Assistance/Clubs 1:52 – 2:30 
 buses depart at 2:20 pm`,
     },
+    {
+        title: 'A Miracle',
+        info: 'Isn\'t it amazing how we all largely agreed on one measurement of time. Almost anywhere you go, you can be almost certain that there is 24 hours in a day.'
+    }
 ]
 
 
