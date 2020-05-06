@@ -5,14 +5,27 @@ import { useState } from 'react';
 import { StyleSheet, Text, View, Switch, Image } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 
+
 export default function Map() {
+  const level1 = require('../assets/images/test-map.png');
+  const level2 = require('../assets/images/test-map2.png');
+  var state = {
+    index: 0,
+    imgList: {
+      true: level2,
+      false: level1
+    }
+  }
+  
+
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer2}>
         <View style={styles.imageContainer}>
-          <Image source={require('../assets/images/test-map.png')} style={{ width: 400, height: 400 }} />
+          <Image source={state.imgList[isEnabled]} style={{ width: 400, height: 400 }} />
         </View>
       </View>
       <Switch
