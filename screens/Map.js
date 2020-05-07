@@ -2,9 +2,10 @@ import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Switch, Image } from 'react-native';
+import { StyleSheet, Text, View, Switch, Image, Animated, Dimensions } from 'react-native';
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
-
+import { PinchGestureHandler, State } from 'react-native-gesture-handler';
+const { width } = Dimensions.get('window')
 
 export default function Map() {
   const level1 = require('../assets/images/test-map.png');
@@ -21,13 +22,56 @@ export default function Map() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
+  const scale = new Animated.Value(1)
+
+  const onZoomEvent = Animated.event(
+    [
+      {
+        nativeEvent: { scale: scale }
+      }
+    ],
+    {
+      useNativeDriver: true
+    }
+  )
+
+  const onZoomStateChange = event => {
+    if (event.nativeEvent.oldState === State.ACTIVE) {
+      Animated.spring(scale, {
+        toValue: 1,
+        useNativeDriver: true
+      }).start()
+    }
+  }
+
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer2}>
-        <View style={styles.imageContainer}>
-          <Image source={state.imgList[isEnabled]} style={{ width: 350, height: 300 }} />
-        </View>
-      </View>
+      
+      <PinchGestureHandler
+        style={{
+          alignItems: 'center',
+          alignContent: 'center',
+          alignSelf: 'center',
+          margin: 500,
+        }}
+        onGestureEvent={onZoomEvent}
+        onHandlerStateChange={onZoomStateChange}>
+        <Animated.Image
+          source={
+            state.imgList[isEnabled]
+          }
+          style={{
+            
+            width: width,
+            height: 300,
+            transform: [{ scale: scale }],
+            alignSelf: 'center',
+            margin: 150,
+          }}
+          resizeMode='contain'
+        />
+      </PinchGestureHandler>
+
       <Switch
         trackColor={{ false: "##433F6F", true: "#433F6F" }}
         thumbColor={isEnabled ? "#1D6D6D" : "#f4f3f4"}
