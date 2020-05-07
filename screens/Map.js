@@ -25,7 +25,7 @@ export default function Map() {
     <View style={styles.container}>
       <View style={styles.imageContainer2}>
         <View style={styles.imageContainer}>
-          <Image source={state.imgList[isEnabled]} style={{ width: 400, height: 400 }} />
+          <Image source={state.imgList[isEnabled]} style={{ width: 350, height: 300 }} />
         </View>
       </View>
       <Switch
