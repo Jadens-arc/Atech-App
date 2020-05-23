@@ -7,6 +7,8 @@ import Map from '../screens/Map';
 import BellSchedule from '../screens/BellSchedule';
 import About from '../screens/About';
 
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
 
@@ -17,7 +19,7 @@ export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerTitle: getHeaderTitle(route) });
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+    <BottomTab.Navigator style={styles.bottomTab} initialRouteName={INITIAL_ROUTE_NAME}>
       <BottomTab.Screen
         name="Home"
         component={HomeScreen}
@@ -50,6 +52,7 @@ export default function BottomTabNavigator({ navigation, route }) {
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-information" />,
         }}
       />
+      
     </BottomTab.Navigator>
   );
 }
@@ -68,3 +71,10 @@ function getHeaderTitle(route) {
       return 'Our Grounds';
   }
 }
+
+const styles = StyleSheet.create({
+  bottomTab: {
+   backgroundColor: 'black'
+  }
+
+});

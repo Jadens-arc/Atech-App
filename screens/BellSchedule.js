@@ -107,7 +107,7 @@ export default function LinksScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fafafa',
+        backgroundColor: '#eeeeee',
     },
     item: {
         backgroundColor: '#eeeeee',
@@ -115,16 +115,17 @@ const styles = StyleSheet.create({
         marginVertical: 8,
         marginHorizontal: 16,
         borderRadius: 10,
-        shadowOffset: { width: 6, height: 6 },
+        shadowOffset: { width: 3, height: 3 },
         shadowColor: 'black',
         shadowOpacity: 0.09,
     },
     itemWrap: {
-        shadowOffset: { width: -6, height: -6 },
+        shadowOffset: { width: -3, height: -3 },
         shadowColor: 'white',
         shadowOpacity: 1,
     },
     title: {
+	color: 'purple',
         fontSize: 32,
         marginBottom: 20,
     },
