@@ -24,14 +24,28 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Home',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-home" />,
+          title: 'My home',
+          headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+	  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-home" />,
         }}
       />
       <BottomTab.Screen
         name="Bell Schedule"
         component={BellSchedule}
         options={{
+	  headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
           title: 'Bell Schedule',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-list" />,
         }}
@@ -74,7 +88,17 @@ function getHeaderTitle(route) {
 
 const styles = StyleSheet.create({
   bottomTab: {
-   backgroundColor: 'black'
+    shadowOffset: { width: -3, height: -3 },
+    shadowColor: 'black',
+    shadowOpacity: 1,
+    backgroundColor: 'black',
+  },
+  
+  topTab: {
+    shadowOffset: { width: -3, height: -3 },
+    shadowColor: 'black',
+    shadowOpacity: 1,
+    backgroundColor: 'black',
   }
 
 });
